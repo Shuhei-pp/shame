@@ -1,0 +1,18 @@
+<head>
+</head>
+<body>
+    <header>
+        <h1>
+            謝メール
+        </h1>
+    </header>
+
+    <main>
+        <%= form_tag("/export/post")do%>
+            <div class = form_content>
+                教授名:<input name="teacher">
+            </div>
+                学籍番号:<input name="school_id">
+        <%end%>
+    </main>
+</body>

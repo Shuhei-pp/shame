@@ -1,0 +1,27 @@
+<body>
+    <h1>datadase</h1>
+    <%= flash[:notice]%></br>
+    <ul>
+        <li>Id</li>
+        <li>Name</li>
+        <li>Created</li>
+        <li>Delete</li>
+    </ul>
+    <hr class="clear_float">
+
+    <% @items.each do|item_index|%>
+        <ul>
+            <li>No.<%= item_index.id  %></li>
+            <li><%= item_index.item  %></li>
+            <li><%= item_index.created_at  %></li>
+            <li><a href ="/home/<%=item_index.id%>">Delete</a></li>
+        </ul>
+    <hr class="clear_float">
+    <% end %>
+
+
+    <%= form_tag("/home/write")do%>
+        <input type="text" placeholder = "登録したいことを書いてください" name="item_content">
+        <input type ="submit" value = "送信">
+    <%end%>
+</body>
