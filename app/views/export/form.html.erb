@@ -14,7 +14,7 @@
             <p>あとはコピー&ペーストであっという間にメールの文面を作ることができます！！！</p>
         </div>
     </div>    
-     <div class ="form_box">
+    <div class ="form_box" id="form_element">
         <%= form_tag("/export/post")do%>
             <div class = form_content style="padding-top:50px">
                 教授名:<input name="teacher">
@@ -45,8 +45,32 @@
                 <p>例:山田太郎</p>
             </div>
             <div class="form_content">
-                <input type="submit">
+                <input type="submit" id="form_submit">
             </div>
         <%end%>
     </div>  
+    <div class ="form_response" id = "form_r">
+
+        <div style="height:1000px;text-align:center">
+            <%if @export_text%>
+                <div>
+                    <textarea lows="10" cols="50" class="output_copy_box" ><%=@export_text%></textarea>
+                </div>
+            <%end%>
+        </div>
+    </div>
 </body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+
+<script>
+
+    <%if @export_text%>
+        $("#form_element").css('display','none');
+    <%end%>
+
+
+
+</script>

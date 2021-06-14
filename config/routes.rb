@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #get 'home/:id'=>"home#delete"
 
   get '/'=>"export#form"
+  get 'export/form'=>"export#form"
   post 'export/post'=>"export#post"
   get 'export/result'=>"export#result"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

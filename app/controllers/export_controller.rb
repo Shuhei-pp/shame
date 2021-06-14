@@ -12,9 +12,8 @@ class ExportController < ApplicationController
         reason = params[:reason]
         wish =params[:wish]
         name =params[:name]
-        redirect_to("/export/result")
         @export_text = "
-        #{teacher}教授
+        #{@teacher}教授
 
         こんにちは。お忙しいところ失礼致します。
         #{faclty},#{department}の#{school_id} #{name}と申します。
@@ -32,6 +31,10 @@ class ExportController < ApplicationController
 
         名前 #{name}
         "
+        render 'form'
+    end
 
+    def result
+        puts @export_text
     end
 end
