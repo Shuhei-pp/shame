@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   get '/'=>"export#form"
   post 'export/post'=>"export#post"
+  get 'export/result'=>"export#result"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,18 +1,52 @@
 <head>
 </head>
 <body>
-    <header>
-        <h1>
-            謝メール
-        </h1>
-    </header>
-
-    <main>
+    <div style="height:50px"></div>
+    <div class ="introduction_outside_box">
+        <div class ="introduction_box">
+            <h2>謝メールとは</h2>
+            <p class="first">謝メールは大学の教授へのメールを作成するサイト！</p>
+            <p>名前はもちろん、学籍番号やレポートの出し忘れなどの理由まで、学生のメールでの必須事項をしっかりと書き記すことが可能！！</p>
+            <h3>使い方</h3>
+            <p>①それぞれの入力フォームに必要事項を入力</p>
+            <p>②下の作成ボタンを押す</p>
+            <p>③生成完了！</p>
+            <p>あとはコピー&ペーストであっという間にメールの文面を作ることができます！！！</p>
+        </div>
+    </div>    
+     <div class ="form_box">
         <%= form_tag("/export/post")do%>
-            <div class = form_content>
+            <div class = form_content style="padding-top:50px">
                 教授名:<input name="teacher">
+                <p>例:佐藤太郎</p>
             </div>
+            <div class = form_content>
                 学籍番号:<input name="school_id">
+                <p>例:J20K999A</p>
+            </div>
+            <div class="form_content">
+                学部:<input name="faculty">
+                <p>例:経済学部</p>
+            </div>
+            <div class="form_content">
+                学科:<input name="department">
+                <p>例:経営学科</p>
+            </div>
+            <div class="form_content">
+                無断欠席理由:<input name="reason">
+                <p>例:寝坊をしたこと</p>
+            </div>
+            <div class="form_content">
+                してほしいこと:<input name="wish">
+                <p>例:今回の出席レポートを受領</p>
+            </div>
+            <div class="form_content">
+                名前:<input name="name">
+                <p>例:山田太郎</p>
+            </div>
+            <div class="form_content">
+                <input type="submit">
+            </div>
         <%end%>
-    </main>
+    </div>  
 </body>

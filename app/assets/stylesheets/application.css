@@ -17,13 +17,55 @@ body{
     margin: 0%;
 }
 
+/* header */
 header{
     height: 100px;
     background-color: rgba(160, 196, 95, 0.699);
-    margin: 0%;
+    padding: 0%;
 }
 
 header>h1{
     padding-top: 20px;
     text-align: center;
+}
+/*main*/
+
+
+.background{
+    background-image: url('dogeza.jpg');
+    width: 100%;
+    background-size: cover;
+    background-color: rgb(233, 142, 142);
+    background-blend-mode: lighten;
+}
+
+/*Introduction */
+.introduction_box{
+    width: 80%;
+    margin: auto;
+    padding: 50px;
+    background-color:rgba(201, 201, 201, 0.548);
+}
+
+.introduction_outside_box{
+    width: 80%;
+    height: 600px;
+    margin: auto;
+}
+
+/*form*/
+.first{
+    margin-top: 0%;
+}
+
+.form_box{
+    height: 900px;
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgba(226, 178, 216, 0.705);
+}
+
+.form_content{
+    text-align: center;
+    padding-top: 30px;
 }
