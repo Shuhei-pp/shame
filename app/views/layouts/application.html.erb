@@ -12,13 +12,30 @@
 
   <body>
     <header>
-        <h1>
-            謝メール
-        </h1>
+      <h1>
+          謝メール
+      </h1>
+
+      <ul class ="header_menu">
+        <li><a href="/users/logout">ログアウト</a></li>
+        <li><a href="/users/login">ログイン</a></li>
+        <li><a href="/users/signup">サインイン</a></li>
+      </ul>
+
+      <%if @current_user%>
+        <div class ="header_menu">
+          <p><%= @current_user.name%>さんようこそ！！</p>
+        </div>
+      <%end %>
+
     </header>
+    <%if flash[:notice] %>
+      <div class="flash">
+        <p><%=flash[:notice] %></p>
+      </div>
+    <%end %>
 
     <main>
-      <div class="background">
         <%= yield %>
       </div>
     </main>

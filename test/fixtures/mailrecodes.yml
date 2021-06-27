@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  mail_form_id: 1
+  teacher: MyString
+  lesson_name: MyString
+  lesson_term: MyString
+  lesson_number: MyString
+  lesson_name: MyString
+  lesson_schedule: MyString
+  reason: MyString
+  task: MyString
+  requirement: MyString
+
+two:
+  user_id: 1
+  mail_form_id: 1
+  teacher: MyString
+  lesson_name: MyString
+  lesson_term: MyString
+  lesson_number: MyString
+  lesson_name: MyString
+  lesson_schedule: MyString
+  reason: MyString
+  task: MyString
+  requirement: MyString

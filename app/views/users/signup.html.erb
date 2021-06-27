@@ -1,0 +1,31 @@
+
+<div>
+  <h1 style="text-align: center">Sign-in</h1>
+</div>
+
+<%=form_tag("/users/signin")do %>
+  <div class = form_content>
+    <label>ユーザーネーム：<input name="name"></label>
+  </div>
+  <div class = form_content>
+    <label>学部：<input name="faculty"></label>
+  </div>
+  <div class = form_content>
+    <label>学科、プログラム：<input name="school_program"></label>
+  </div>
+  <div class = form_content>
+    <label>学年：<input name="grate"></label>
+  </div>
+  <div class = form_content>
+    <label>学籍番号：<input name="school_number"></label>
+  </div>
+  <div class = form_content>
+    <label>メールアドレス：<input name="email"></label>
+  </div>
+  <div class = form_content>
+    <label>パスワード<input type="password" name="password"></label>
+  </div>
+  <div class = form_content>
+    <input type="submit">
+  </div>
+<%end%>

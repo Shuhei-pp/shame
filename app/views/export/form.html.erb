@@ -1,62 +1,247 @@
 <head>
 </head>
 <body>
-    <div style="height:50px"></div>
-    <div class ="introduction_outside_box">
-        <div class ="introduction_box">
-            <h2>謝メールとは</h2>
-            <p class="first">謝メールは大学の教授へのメールを作成するサイト！</p>
-            <p>名前はもちろん、学籍番号やレポートの出し忘れなどの理由まで、学生のメールでの必須事項をしっかりと書き記すことが可能！！</p>
-            <h3>使い方</h3>
-            <p>①それぞれの入力フォームに必要事項を入力</p>
-            <p>②下の作成ボタンを押す</p>
-            <p>③生成完了！</p>
-            <p>あとはコピー&ペーストであっという間にメールの文面を作ることができます！！！</p>
+    <div class="background">
+        <div style="height:100px"></div>
+        <div class ="introduction_outside_box">
+            <div class ="introduction_box">
+                <h2>謝メールとは</h2>
+                <p class="first">謝メールは大学の教授へのメールを作成するサイト！</p>
+                <p>名前はもちろん、学籍番号やレポートの出し忘れなどの理由まで、学生のメールでの必須事項をしっかりと書き記すことが可能！！</p>
+                <h3>使い方</h3>
+                <p>①それぞれの入力フォームに必要事項を入力</p>
+                <p>②下の作成ボタンを押す</p>
+                <p>③生成完了！</p>
+                <p>あとはコピー&ペーストであっという間にメールの文面を作ることができます！！！</p>
+            </div>
         </div>
-    </div>    
-    <div class ="form_box" id="form_element">
-        <%= form_tag("/export/post")do%>
-            <div class = form_content style="padding-top:50px">
-                教授名:<input name="teacher">
-                <p>例:佐藤太郎</p>
-            </div>
-            <div class = form_content>
-                学籍番号:<input name="school_id">
-                <p>例:J20K999A</p>
-            </div>
-            <div class="form_content">
-                学部:<input name="faculty">
-                <p>例:経済学部</p>
-            </div>
-            <div class="form_content">
-                学科:<input name="department">
-                <p>例:経営学科</p>
-            </div>
-            <div class="form_content">
-                無断欠席理由:<input name="reason">
-                <p>例:寝坊をしたこと</p>
-            </div>
-            <div class="form_content">
-                してほしいこと:<input name="wish">
-                <p>例:今回の出席レポートを受領</p>
-            </div>
-            <div class="form_content">
-                名前:<input name="name">
-                <p>例:山田太郎</p>
-            </div>
-            <div class="form_content">
-                <input type="submit" id="form_submit">
-            </div>
-        <%end%>
-    </div>  
-    <div class ="form_response" id = "form_r">
+    </div>
 
-        <div style="height:1000px;text-align:center">
-            <%if @export_text%>
-                <div>
-                    <textarea lows="10" cols="50" class="output_copy_box" ><%=@export_text%></textarea>
+    <div class="form_background_image">
+        <div style="padding: 60px">
+            <div class="select_kind_box">
+                <h3><span>謝メール一覧</br>(クリックで切り替え）</span></h3>
+                <ul class="select_kind">
+                    <li><span href="#" data-id="1" class="select_kind_mail">無断欠席謝メール</span></li>
+                    <li><span href="#" data-id="2" class="select_kind_mail">期限切れ提出物謝メール</span></li>
+                    <li><span href="#" data-id="3" class="select_kind_mail">返信催促謝メール</span></li>
+                    <li><span href="#" data-id="4" class="select_kind_mail">成績確認内訳確認謝メール</span></li>
+                    <li><span href="#" data-id="5" class="select_kind_mail">落単成績申し立て謝メール</span></li>
+                </ul>
+            </div>
+
+            <div style="width: 50px; height:50px; float: left"></div>
+
+            <div class ="form_box" id="form_1" style="display: block" style="height: 1300px">
+                <h1 class = "form_content" >無断欠席謝メール</h1>
+                <%= form_tag("/export/post/1") do%>
+                    <div class = form_content style="padding-top:50px">
+                        教授名:<input name="teacher">
+                        <p>例:佐藤太郎</p>
+                    </div>
+                    <div class="form_content">
+                      講義名:<input name="lesson">
+                      <p>例:金曜３限の人間学概論</p>
+                    </div>
+                    <div class = form_content>
+                        学籍番号:<input name="school_id">
+                        <p>例:J20K999A</p>
+                    </div>
+                    <div class="form_content">
+                        学部:<input name="faculty">
+                        <p>例:経済学部</p>
+                    </div>
+                    <div class="form_content">
+                        学科:<input name="department">
+                        <p>例:経営学科</p>
+                    </div>
+                    <div class="form_content">
+                        無断欠席理由:<input name="reason">
+                        <p>例:寝坊をしたこと</p>
+                    </div>
+                    <div class="form_content">
+                        してほしいこと:<input name="wish">
+                        <p>例:今回の出席レポートを受領</p>
+                    </div>
+                    <div class="form_content">
+                        名前:<input name="name">
+                        <p>例:山田太郎</p>
+                    </div>
+                    <div class="form_content">
+                        <input type="submit" id="form_submit" style="padding: 3px">
+                    </div>
+                <%end%>
+            </div>
+
+            <div class ="form_box" id="form_2" style="display: none" style="height: 1300px">
+              <h1 class = "form_content" >期限切れ提出物謝メール</h1>
+              <%= form_tag("/export/post/2") do%>
+                <div class = form_content style="padding-top:50px">
+                  教授名:<input name="teacher">
+                  <p>例:佐藤太郎</p>
                 </div>
-            <%end%>
+                <div class="form_content">
+                  講義名:<input name="lesson">
+                  <p>例:月曜４限の応用数学</p>
+                </div>
+                <div class = form_content>
+                  学籍番号:<input name="school_id">
+                  <p>例:J20K999A</p>
+                </div>
+                <div class="form_content">
+                  学部:<input name="faculty">
+                  <p>例:経済学部</p>
+                </div>
+                <div class="form_content">
+                  学科:<input name="department">
+                  <p>例:経営学科</p>
+                </div>
+                <div class="form_content">
+                  課題:<input name="task">
+                  <p>例:期末課題レポート</p>
+                </div>
+                <div class="form_content">
+                  名前:<input name="name">
+                  <p>例:山田太郎</p>
+                </div>
+                <div class="form_content">
+                  <input type="submit" id="form_submit" style="padding: 3px">
+                </div>
+              <%end%>
+            </div>
+
+            <div class ="form_box" id="form_3" style="display: none" style="height: 1300px">
+              <h1 class = "form_content" >返信催促謝メール</h1>
+              <%= form_tag("/export/post/3") do%>
+                <div class = form_content style="padding-top:50px">
+                  教授名:<input name="teacher">
+                  <p>例:佐藤太郎</p>
+                </div>
+                <div class="form_content">
+                  要件:<input name="requirement">
+                  <p>例:先日連絡させていただいた件</p>
+                </div>
+                <div class = form_content>
+                  学籍番号:<input name="school_id">
+                  <p>例:J20K999A</p>
+                </div>
+                <div class="form_content">
+                  学部:<input name="faculty">
+                  <p>例:理学部</p>
+                </div>
+                <div class="form_content">
+                  学科:<input name="department">
+                  <p>例:物理学科</p>
+                </div>
+
+                <div class="form_content">
+                  名前:<input name="name">
+                  <p>例:山田太郎</p>
+                </div>
+                <div class="form_content">
+                  <input type="submit" id="form_submit" style="padding: 3px">
+                </div>
+              <%end%>
+            </div>
+
+            <div class ="form_box" id="form_4" style="display: none" style="height: 1300px">
+              <h1 class = "form_content" >成績内訳確認謝メール</h1>
+                <%= form_tag("/export/post/4") do%>
+                  <div class = form_content style="padding-top:50px">
+                    教授名:<input name="teacher">
+                    <p>例:佐藤太郎</p>
+                  </div>
+                  <div class="form_content">
+                    講義の開講期間:<input name="lesson_term">
+                    <p>例:前期第1ターム、後期等</p>
+                  </div>
+                  <div class="form_content">
+                    講義の開講番号:<input name="lesson_number">
+                    <p>例:2020x6666a</p>
+                  </div>
+                  <div class="form_content">
+                    講義名:<input name="lesson_name">
+                    <p>例:基礎教育論</p>
+                  </div>
+                  <div class = form_content>
+                    学籍番号:<input name="school_id">
+                    <p>例:J20K999A</p>
+                  </div>
+                  <div class="form_content">
+                    学部:<input name="faculty">
+                    <p>例:理学部</p>
+                  </div>
+                  <div class="form_content">
+                    学科:<input name="department">
+                    <p>例:物理学科</p>
+                  </div>
+
+                  <div class="form_content">
+                    名前:<input name="name">
+                    <p>例:山田太郎</p>
+                  </div>
+                  <div class="form_content">
+                    <input type="submit" id="form_submit" style="padding: 3px">
+                  </div>
+                <%end%>
+              </div>
+
+            <div class ="form_box" id="form_5" style="display: none" style="height: 1300px">
+              <h1 class = "form_content" >落単成績申し立て謝メール</h1>
+              <%= form_tag("/export/post/5") do%>
+                <div class = form_content style="padding-top:50px">
+                  教授名:<input name="teacher">
+                  <p>例:佐藤太郎</p>
+                </div>
+                <div class="form_content">
+                  講義の開講期間:<input name="lesson_term">
+                  <p>例:第4ターム、前期等</p>
+                </div>
+                <div class="form_content">
+                  講義の開講番号:<input name="lesson_number">
+                  <p>例:2022a8888s</p>
+                </div>
+                <div class="form_content">
+                  講義名:<input name="lesson_name">
+                  <p>例:応用電気論</p>
+                </div>
+                <div class = form_content>
+                  学籍番号:<input name="school_id">
+                  <p>例:J20K999A</p>
+                </div>
+                <div class="form_content">
+                  学部:<input name="faculty">
+                  <p>例:文学部</p>
+                </div>
+                <div class="form_content">
+                  学科:<input name="department">
+                  <p>例:文学科</p>
+                </div>
+
+                <div class="form_content">
+                  名前:<input name="name">
+                  <p>例:山田太郎</p>
+                </div>
+                <div class="form_content">
+                  <input type="submit" id="form_submit" style="padding: 3px">
+                </div>
+              <%end%>
+            </div>
+
+            <div class ="form_response" id ="form_r" style="display: block">
+
+                <div style="height:500px;text-align:center">
+                    <%if @export_text%>
+                        <div>
+                            <textarea lows="10" cols="50" class="output_copy_box" ><%=@export_text%></textarea>
+                        </div>
+                        <div style="height:100px"></div>
+                        <%=form_tag("/export/form")do%>
+                            <input type="submit"value="もう一度謝メールを作成する">
+                        <%end%>
+                    <%end%>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -66,10 +251,22 @@
 
 
 <script>
+    var current_mail = 1;
+
+    $(".select_kind_mail").click(function (){
+        $("#form_r").hide();
+        var select = $(this).data('id');
+        var form_id = "#form_"+current_mail;
+        $(form_id).hide();
+        current_mail = select;
+        form_id = "#form_"+current_mail;
+        $(form_id).show();
+    });
 
     <%if @export_text%>
-        $("#form_element").css('display','none');
+        $(".form_box").css('display','none');
     <%end%>
+
 
 
 

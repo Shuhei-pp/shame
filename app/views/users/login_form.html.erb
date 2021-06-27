@@ -1,0 +1,15 @@
+<%=form_tag("/users/login") do%>
+  <div class = form_content>  
+    <label>
+      ユーザーネーム：<input name="name">
+    </label>
+  </div>
+  <div class = form_content>
+    <label>
+      パスワード：<input type="password" name="password">
+    </label>
+  </div>
+  <div class = form_content>
+    <input type="submit">
+  </div>
+<%end %>
