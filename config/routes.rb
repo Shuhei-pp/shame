@@ -8,11 +8,7 @@ Rails.application.routes.draw do
   get 'export/form' => "export#form"
   get 'export/form/:id' => "export#form"
   post 'export/form' => "export#form"
-  post 'export/post/1' => "export#post1"
-  post 'export/post/2' => "export#post2"
-  post 'export/post/3' => "export#post3"
-  post 'export/post/4' => "export#post4"
-  post 'export/post/5' => "export#post5"
+  post 'export/post/:id' => "export#post"
   get 'export/result' => "export#result"
 
   get 'users/login' => "users#login_form"

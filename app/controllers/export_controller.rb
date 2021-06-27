@@ -1,9 +1,11 @@
 class ExportController < ApplicationController
     def form
-    
+
     end
 
-    def post1
+    def post
+        form_id = params[:id]
+
         teacher = params[:teacher]
         school_id = params[:school_id]
         faculty = params[:faculty]
@@ -12,8 +14,13 @@ class ExportController < ApplicationController
         wish = params[:wish]
         name = params[:name]
         lesson = params[:lesson]
+        task = params[:task]
+        lesson_name = params[:lesson_name]
+        lesson_term = params[:lesson_term]
+        lesson_number = params[:lesson_number]
 
-        @export_text = "
+        if form_id == '1'
+            @export_text = "
 #{teacher}教授
 
 こんにちは。お忙しいところ失礼致します。
@@ -33,19 +40,8 @@ class ExportController < ApplicationController
 
 名前 #{name}
 "
-        render 'form'
-    end
-
-    def post2
-        teacher = params[:teacher]
-        faculty = params[:faculty]
-        lesson = params[:lesson]
-        department = params[:department]
-        school_id = params[:school_id]
-        name = params[:name]
-        task = params[:task]
-        @export_text = "
-
+        elsif form_id == '2'
+            @export_text = "
 #{teacher}教授
 
 こんにちは。お忙しいところ失礼致します。
@@ -64,18 +60,10 @@ class ExportController < ApplicationController
 失礼致します。
 
 #{name}
-"
-        render 'form'
-    end
+            "
+        elsif form_id == '3'
 
-    def post3
-        teacher = params[:teacher]
-        faculty = params[:faculty]
-        department = params[:department]
-        school_id = params[:school_id]
-        name = params[:name]
-        requirement = params[:requirement]
-        @export_text = "
+            @export_text = "
 
 #{teacher}教授
 
@@ -90,22 +78,10 @@ class ExportController < ApplicationController
 失礼します。
 
 #{name}
-        "
-        render 'form'
-    end
-
-    def post4
-        teacher = params[:teacher]
-        faculty = params[:faculty]
-        department = params[:department]
-        school_id = params[:school_id]
-        name = params[:name]
-        lesson_name = params[:lesson_name]
-        lesson_term = params[:lesson_term]
-        lesson_number = params[:lesson_number]
-        @export_text = "
-
-        #{teacher}教授
+            "
+        elsif form_id == '4'
+            @export_text = "
+#{teacher}教授
 
 こんにちは。お忙しい中失礼します。
 
@@ -118,20 +94,9 @@ class ExportController < ApplicationController
 失礼します。
 
 #{name}
-        "
-        render 'form'
-    end
-
-    def post5
-        teacher = params[:teacher]
-        faculty = params[:faculty]
-        department = params[:department]
-        school_id = params[:school_id]
-        name = params[:name]
-        lesson_name = params[:lesson_name]
-        lesson_term = params[:lesson_term]
-        lesson_number = params[:lesson_number]
-        @export_text = "
+"
+        elsif form_id == '5'
+            @export_text = "
 #{teacher}教授
 
 こんにちは。お忙しい中失礼します。
@@ -146,7 +111,9 @@ class ExportController < ApplicationController
 失礼します。
 
 #{name}
-        "
+"
+        end
+
         render 'form'
     end
 
