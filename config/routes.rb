@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'users/login' => "users#login_form"
   post 'users/login' => "users#login"
   get 'users/logout' => "users#logout"
-  get 'users/signup' => "users#signup"
+  get 'users/signup_form' => "users#signup_form"
   post 'users/signup' => "users#signup"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -34,9 +34,18 @@ class UsersController < ApplicationController
       grade: params[:grade],
       student_number: params[:school_number]
     )
-    @user.save
-    session[:user_id] = @user.id
-    flash[:notice] = "サインアップしました"
-    redirect_to("/")
+    if @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = "サインアップしました"
+      redirect_to("/")
+    else
+      flash[:notice] = @user.errors.full_messages
+      render 'signup_form'
+    end
+
+  end
+
+  def signup_form
+
   end
 end

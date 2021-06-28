@@ -13,18 +13,31 @@ class ExportController < ApplicationController
         reason = params[:reason]
         wish = params[:wish]
         name = params[:name]
-        lesson = params[:lesson]
         task = params[:task]
         lesson_name = params[:lesson_name]
         lesson_term = params[:lesson_term]
         lesson_number = params[:lesson_number]
 
-        if form_id == '1'
+        mail_parameter = Mailrecode.new(
+          user_id: @current_user.id,
+          mail_form_id: form_id,
+          teacher: params[:teacher],
+          reason: params[:reason],
+          task: params[:task],
+          wish: params[:wish],
+          requirement: params[:requirement],
+          lesson_name: params[:lesson_name],
+          lesson_term: params[:lesson_term],
+          lesson_number: params[:lesson_number]
+        )
+        if mail_parameter.save
+
+          if form_id == '1'
             @export_text = "
 #{teacher}教授
 
 こんにちは。お忙しいところ失礼致します。
-#{lesson}を受講している
+#{lesson_name}を受講している
 #{faculty}、#{department}の#{school_id} #{name}と申します。
 
 本日の講義ですが、#{reason}により出席することができませんでした。
@@ -40,12 +53,12 @@ class ExportController < ApplicationController
 
 名前 #{name}
 "
-        elsif form_id == '2'
-            @export_text = "
+          elsif form_id == '2'
+              @export_text = "
 #{teacher}教授
 
 こんにちは。お忙しいところ失礼致します。
-#{lesson}を受講している、
+#{lesson_name}を受講している、
 #{faculty}#{department}　#{school_id}の#{name}と申します。
 
 申し上げにくいのですが、#{task}を提出することができませんでした。
@@ -61,7 +74,7 @@ class ExportController < ApplicationController
 
 #{name}
             "
-        elsif form_id == '3'
+          elsif form_id == '3'
 
             @export_text = "
 
@@ -79,7 +92,7 @@ class ExportController < ApplicationController
 
 #{name}
             "
-        elsif form_id == '4'
+          elsif form_id == '4'
             @export_text = "
 #{teacher}教授
 
@@ -95,7 +108,7 @@ class ExportController < ApplicationController
 
 #{name}
 "
-        elsif form_id == '5'
+          elsif form_id == '5'
             @export_text = "
 #{teacher}教授
 
@@ -112,6 +125,10 @@ class ExportController < ApplicationController
 
 #{name}
 "
+          end
+
+        else
+          flash[:notice] = "各パラメーターに数字を入力してください"
         end
 
         render 'form'
