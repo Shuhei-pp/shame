@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_06_22_064833) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "mailrecodes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "mail_form_id"
@@ -36,12 +39,6 @@ ActiveRecord::Schema.define(version: 2021_06_22_064833) do
     t.integer "grade"
     t.string "student_number"
     t.integer "admin"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "writes", force: :cascade do |t|
-    t.text "item"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

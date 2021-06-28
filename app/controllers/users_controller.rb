@@ -34,6 +34,9 @@ class UsersController < ApplicationController
       grade: params[:grade],
       student_number: params[:school_number]
     )
-    @user.save;
+    @user.save
+    session[:user_id] = @user.id
+    flash[:notice] = "サインアップしました"
+    redirect_to("/")
   end
 end
