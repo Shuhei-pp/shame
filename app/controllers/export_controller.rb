@@ -14,6 +14,7 @@ class ExportController < ApplicationController
         wish = params[:wish]
         name = params[:name]
         task = params[:task]
+        requirement = params[:requirement]
         lesson_name = params[:lesson_name]
         lesson_term = params[:lesson_term]
         lesson_number = params[:lesson_number]
