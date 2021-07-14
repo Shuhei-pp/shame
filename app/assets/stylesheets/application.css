@@ -51,7 +51,20 @@ header>h1>a:visited{
 }
 
 .header_menu>li{
-    padding-right: 2px;
+    border: 1px solid;
+    border-radius: 2px;
+    margin-right: 2px;
+    background-color: #ffffff;
+}
+
+.header_menu>li>a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.header_menu>li>a:visited{
+    text-decoration: none;
+    color: #000000;
 }
 
 .flash{
