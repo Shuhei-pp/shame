@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_06_28_075359) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "mailrecodes", force: :cascade do |t|
+  create_table "mailrecodes", charset: "utf8mb3", force: :cascade do |t|
     t.integer "user_id"
     t.integer "mail_form_id"
     t.string "teacher"
@@ -31,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_075359) do
     t.string "wish"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password"
