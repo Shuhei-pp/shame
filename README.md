@@ -6,7 +6,6 @@ railsを使用しています。
 
 # TODO
 
-* titleの修正  
 * signup時の説明(merit)  
 * signupをメールで行う  
 * ログイン、サインアップ時の画面  
