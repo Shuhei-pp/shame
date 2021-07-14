@@ -11,6 +11,8 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # gem 'pg' #postgreSQL追加
 gem 'mysql2'
 
+gem 'devise'
+
 gem 'rails-i18n' #エラーメッセージの日本語化
 
 # Use Puma as the app server
