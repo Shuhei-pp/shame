@@ -23,11 +23,11 @@
 
       <ul class ="header_menu">
         <%if @current_user %>
-          <li><a href="/users/logout">ログアウト</a></li>
+          <li><a href="/users/sign_out">ログアウト</a></li>
         <%end %>
         <%if @current_user == nil %>
-          <li><a href="/users/login">ログイン</a></li>
-          <li><a href="/users/signup_form">サインアップ</a></li>
+          <li><a href="/users/sign_in">ログイン</a></li>
+          <li><a href="/users/sign_up">サインアップ</a></li>
         <%end %>
       </ul>
 
