@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :faculty, presence: true
-  validates :password, presence: true, length: {minimum: 5}
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end
