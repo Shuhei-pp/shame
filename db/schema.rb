@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_28_075359) do
+ActiveRecord::Schema.define(version: 2021_07_20_140257) do
 
   create_table "mailrecodes", charset: "utf8mb3", force: :cascade do |t|
     t.integer "user_id"
@@ -29,16 +29,15 @@ ActiveRecord::Schema.define(version: 2021_06_28_075359) do
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
-    t.string "faculty"
-    t.string "program"
-    t.integer "grade"
-    t.string "student_number"
-    t.integer "admin"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
