@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   post 'export/post/:id' => "export#post"
   get 'export/result' => "export#result"
 
-  get 'users/login' => "users#login_form"
-  post 'users/login' => "users#login"
-  get 'users/logout' => "users#logout"
-  get 'users/signup_form' => "users#signup_form"
-  post 'users/signup' => "users#signup"
+  # get 'users/login' => "users#login_form"
+  # post 'users/login' => "users#login"
+  # get 'users/logout' => "users#logout"
+  # get 'users/signup_form' => "users#signup_form"
+  # post 'users/signup' => "users#signup"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
