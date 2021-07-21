@@ -12,6 +12,8 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'mysql2'
 
 gem 'devise'
+gem 'devise-i18n'#devise 日本語化
+gem 'devise-i18n-views'
 
 gem 'rails-i18n' #エラーメッセージの日本語化
 
