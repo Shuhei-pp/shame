@@ -22,18 +22,18 @@
         </h1>
 
       <ul class ="header_menu">
-        <%if @current_user %>
-          <li><a href="/users/sign_out">ログアウト</a></li>
+        <%if current_user %>
+          <li><a href="/users/sign_out" data-method="delete">ログアウト</a></li>
         <%end %>
-        <%if @current_user == nil %>
+        <%if current_user == nil %>
           <li><a href="/users/sign_in">ログイン</a></li>
           <li><a href="/users/sign_up">サインアップ</a></li>
         <%end %>
       </ul>
 
-      <%if @current_user%>
+      <%if current_user%>
         <div class ="header_menu">
-          <p><%= @current_user.name%>さんようこそ！！</p>
+          <p><%= current_user.email%>さんようこそ！！</p>
         </div>
       <%end %>
 
