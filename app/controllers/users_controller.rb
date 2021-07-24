@@ -48,4 +48,8 @@ class UsersController < ApplicationController
   def signup_form
 
   end
+
+  def edit
+
+  end
 end

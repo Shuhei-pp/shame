@@ -33,7 +33,7 @@
 
       <%if current_user%>
         <div class ="header_menu">
-          <p><%= current_user.email%>さんようこそ！！</p>
+          <a href="/users/_edit/<%= current_user.id%>"><%= current_user.email%>さんようこそ！！</a>
         </div>
       <%end %>
 
