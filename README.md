@@ -24,17 +24,20 @@ $ docker-compose -d up　　　　　　　　　　　　# コンテナの一�
 ↓  
 $ docker-compose run web rails db:create　　　# db作成  
 
-# 開発するときのコマンド
-　　
-コンテナ起動　　
+# 開発するときのコマンド  
+  
+*コンテナ起動  
 $ docker-compose -d up　　
+  
+*最新の状態をpull  
+$ git pull origin HEAD  
 
-railsのコマンドを打つ
-$ docker-compose exec web <command>　　
-　　
-コンテナ停止　　
+railsのコマンドを打つ  
+$ docker-compose exec web COMMAND  
+  
+コンテナ停止  
 $ docker-compose down  
-
+　　
 # GIT
 
 $ git status   
