@@ -23,6 +23,8 @@ $ docker-compose build　　　　　　　　　　　　# コンテナをビ�
 $ docker-compose -d up　　　　　　　　　　　　# コンテナの一斉起動  
 ↓  
 $ docker-compose run web rails db:create　　　# db作成  
+↓  
+$ docker-compose run web rails db:migrate　　　# migration  
 
 # 開発するときのコマンド  
   
