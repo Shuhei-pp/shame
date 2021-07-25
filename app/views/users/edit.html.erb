@@ -1,0 +1,29 @@
+<div>
+  <h1 style="text-align: center">Edit</h1>
+</div>
+
+<%=form_tag("/users/edit") do%>
+  <div class = form_content>  
+    <label>
+      名前：<input name="name"  <%if current_user.name%> value=<%=current_user.name%> <%end%>>
+    </label>
+  </div>
+  <div class = form_content>
+    <label>
+      学部：<input name="faculty" <%if current_user.faculty%> value=<%=current_user.faculty%> <%end%>>
+    </label>
+  </div>
+  <div class = form_content>
+    <label>
+      学科：<input name="school_program" <%if current_user.school_program%> value=<%=current_user.school_program%> <%end%>>
+    </label>
+  </div>
+  <div class = form_content>
+    <label>
+      学績番号：<input name="school_number" <%if current_user.school_number%> value=<%=current_user.school_number%> <%end%>>
+    </label>
+  </div>
+  <div class = form_content>
+    <input type="submit">
+  </div>
+<%end %>

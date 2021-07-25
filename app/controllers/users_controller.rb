@@ -52,4 +52,14 @@ class UsersController < ApplicationController
   def edit
 
   end
+
+  def edit_profile
+    user = User.find_by(email: current_user.email)
+    user.name = params[:name]
+    user.faculty = params[:faculty]
+    user.school_program = params[:school_program]
+    user.school_number = params[:school_number]
+    user.save
+  end
+
 end
