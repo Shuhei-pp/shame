@@ -4,15 +4,17 @@
 
 railsを使用しています。  
   
-* メールボックス(letter_opener)  
-http://localhost:3000/letter_opener  
 
-* home  
-http://localhost:3000/
+# URL  
+> メールボックス(letter_opener)  
+> http://localhost:3000/letter_opener  
+
+> home  
+> http://localhost:3000/
 
 # TODO
 
-* signupをメールで行う(devise使用したので調整必須)  
+* ログインメールの整備  
 * ログイン、サインアップ時の画面  　
 * 講義名1つでテキストボックスが作られているが、開講時間、講義名等で分ける  
 * 個人ページ作成
@@ -43,7 +45,10 @@ railsのコマンドを打つ
 $ docker-compose exec web COMMAND  
   
 コンテナ停止  
-$ docker-compose down  
+$ docker-compose stop 
+  
+railsのデバッグ  
+$ docker attach ーコンテナIDー  
 　　
 # GIT
 
