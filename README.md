@@ -2,7 +2,13 @@
 
 謝メというメールを自動生成するシステムです。
 
-railsを使用しています。
+railsを使用しています。  
+  
+* メールボックス(letter_opener)  
+http://localhost:3000/letter_opener  
+
+* home  
+http://localhost:3000/
 
 # TODO
 
@@ -12,7 +18,6 @@ railsを使用しています。
 * 個人ページ作成
 
 # 環境構築  
-  
 
 ( *dockerは入っている前提です。* 入ってない場合はダウンロード →https://www.docker.com/)
 

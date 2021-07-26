@@ -15,6 +15,9 @@ gem 'devise'
 gem 'devise-i18n'#devise 日本語化
 gem 'devise-i18n-views'
 
+gem 'letter_opener'
+gem 'letter_opener_web'
+
 gem 'rails-i18n' #エラーメッセージの日本語化
 
 # Use Puma as the app server

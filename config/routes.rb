@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   # post 'users/signup' => "users#signup"
   get 'users/_edit/:id' => "users#edit"
   post 'users/edit' => "users#edit_profile"
+
+  # 開発用のメール確認ルーティング
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: '/letter_opener'
+  end
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
