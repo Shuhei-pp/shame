@@ -44,7 +44,7 @@ $ git pull origin HEAD
 railsのコマンドを打つ  
 $ docker-compose exec web COMMAND  
   
-コンテナ停止  
+コンテナ停止(終了時)  
 $ docker-compose stop 
   
 railsのデバッグ  
