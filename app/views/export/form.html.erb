@@ -255,10 +255,10 @@
 
     $(".select_kind_mail").click(function (){
         $("#form_r").hide();
-        var select = $(this).data('id');
+        var select_form_id = $(this).data('id');
         var form_id = "#form_"+current_mail;
         $(form_id).hide();
-        current_mail = select;
+        current_mail = select_form_id;
         form_id = "#form_"+current_mail;
         $(form_id).show();
     });
