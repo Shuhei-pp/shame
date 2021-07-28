@@ -20,7 +20,6 @@ class ExportController < ApplicationController
         lesson_number = params[:lesson_number]
 
         mail_parameter = Mailrecode.new(
-          user_id: @current_user.id,
           mail_form_id: form_id,
           teacher: params[:teacher],
           reason: params[:reason],
@@ -31,6 +30,11 @@ class ExportController < ApplicationController
           lesson_term: params[:lesson_term],
           lesson_number: params[:lesson_number]
         )
+
+        if @current_user
+          mail_parameter.user_id = @current_user.id
+        end
+
         if mail_parameter.save
 
           if form_id == '1'
