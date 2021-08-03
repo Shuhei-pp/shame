@@ -60,3 +60,7 @@ $ git commit -m "message"
 ↓  
 $ git push origin HEAD   
 
+# tips
+
+サーバーコンテナが立ち上がらない時  
+$ rm tmp/pids/server.pid  
